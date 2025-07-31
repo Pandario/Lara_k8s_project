@@ -1,4 +1,7 @@
-# First. From api roots:
+# First. /api_first
+create .env from .env.example
+
+# Second. From api roots:
 npm install; npm run build
 
 # from project root (lara_api/)
@@ -10,7 +13,6 @@ docker build -t api_end:local     ./api_end
 cd api_first   && composer install && cp .env.example .env && php artisan key:generate && cd ..
 cd api_middle  && composer install && cp .env.example .env && php artisan key:generate && cd ..
 cd api_end     && composer install && cp .env.example .env && php artisan key:generate && cd ..
-
 
 
 # After, from project root:
