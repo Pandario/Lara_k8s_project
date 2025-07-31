@@ -44,3 +44,6 @@ kubectl get pods to get all pods
 
    ## and if needed
    kubectl rollout restart deployment/<yaml>
+
+   ### Tests:
+      just run  php artisan test
