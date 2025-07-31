@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-middle
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: api-middle
+  template:
+    metadata:
+      labels:
+        app: api-middle
+    spec:
+      containers:
+        - name: api-middle
+          image: api_middle:local
+          ports:
+            - containerPort: 8000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: api-middle
+spec:
+  type: NodePort
+  selector:
+    app: api-middle
+  ports:
+    - port: 8000
+      targetPort: 8000
+      nodePort: 30002
