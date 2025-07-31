@@ -23,3 +23,12 @@ data:
       company_id_end VARCHAR(255),
       company_name VARCHAR(255)
     );
+    
+    -- logs
+    CREATE TABLE api_logs (
+      id INT AUTO_INCREMENT PRIMARY KEY,
+      level VARCHAR(20),
+      message TEXT,
+      context JSON,
+      created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    );
